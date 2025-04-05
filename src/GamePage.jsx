@@ -26,8 +26,16 @@ function GamePage({ word }) {
     if (word.includes(letter)) {
       setMessage('Good guess!');
     } else {
-      setRemainingAttempts(remainingAttempts - 1);
-      setMessage(`Wrong guess! ${remainingAttempts - 1} attempts left`);
+      const newAttempts = remainingAttempts - 1;
+      setRemainingAttempts(newAttempts);
+
+      if (remainingAttempts === 1) {
+        setMessage(`Game Over! The word was "${word}"`);
+        setGuessedLetters([]);
+        setRemainingAttempts(6);
+      } else {
+        setMessage(`Wrong guess! ${newAttempts} attempts left`);
+      }
     }
 
 
