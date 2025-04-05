@@ -1,11 +1,18 @@
 import { useState } from 'react';
 
 function GamePage({ word }) {
+  const [guessedLetters, setGuessedLetters] = useState([]);
+  
+  const display = word
+    .split('')
+    .map((ch) => (guessedLetters.includes(ch) ? ch : '_'))
+    .join(' ');
+
   return (
     <div>
       <h2>Guess the World!</h2>
 
-      <p>displaying the guessing process</p>
+      <p>{display}</p>
 
       <input 
         type="text"
