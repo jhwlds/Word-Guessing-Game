@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function GamePage({ word }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
-  const [message, setMassage] = useState('');
+  const [message, setMessage] = useState('');
 
   const display = word
     .split('')
@@ -11,11 +11,16 @@ function GamePage({ word }) {
   
   const handleGuess = (letter) => {
     if (!letter.match(/^[a-z]$/)) {
-      setMassage('Please enter an alphabet letter');
+      setMessage('Please enter an alphabet letter');
       return;
     }
-      
+    const updateGuesses = [...guessedLetters, letter];
+    setGuessedLetters(updateGuesses);
+
+
   }
+
+
 
   return (
     <div>
@@ -31,9 +36,9 @@ function GamePage({ word }) {
             handleGuess(e.target.value.toLowerCase());
             e.target.value = '';
           }
-
         }}
-
+        placeholder='Enter an alphabet letter'
+        autoFocus
       />
 
       <p>{message}</p>
