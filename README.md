@@ -41,23 +41,29 @@ A simple word guessing game built with React that challenges players to guess a 
 
 
 
-📦 Getting Started
+## 📦 Getting Started
 
-1. Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/word-guessing-game.git
 cd word-guessing-game
 ```
 
-2. Install dependencies
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-3. Run the development server
+### 3. Run the development server
 
 ```bash
 npm run dev
 ```
+
+---
+
+## 📄 License
+
+This project is for educational/demo purposes only.
