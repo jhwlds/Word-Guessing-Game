@@ -41,14 +41,14 @@ function App() {
         ))}
       </select>
 
-      <button onClick={fetchWord} style={{ marginLeft: '1rem' }}>Get it!</button>
+      <button onClick={fetchWord}>Get it!</button>
 
-      <div style={{ marginTop: '1rem' }}>
+      <div>
         {isLoading ? (
           <p>Loading...</p>
         ) : word ? (
           <>
-            <p>Word Ready ✔</p>
+            <p>Word Ready!</p>
             <button onClick={() => setIsGameStarted(true)}>Play ▶</button>
           </>
         ) : (
