@@ -3,6 +3,7 @@ import { useState } from 'react';
 function GamePage({ word }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [message, setMessage] = useState('');
+  const [remainingAttempts, setRemainingAttempts] = useState(7);
 
   const display = word
     .split('')
@@ -16,6 +17,18 @@ function GamePage({ word }) {
     }
     const updateGuesses = [...guessedLetters, letter];
     setGuessedLetters(updateGuesses);
+
+    if (guessedLetters.includes(letter)) {
+      setMessage('You already guessed that letter!');
+      return;
+    }
+
+    if (word.includes(letter)) {
+      setMessage('Good guess!');
+    } else {
+      setRemainingAttempts(remainingAttempts - 1);
+      setMessage(`Wrong guess! ${remainingAttempts - 1} attempts left`);
+    }
 
 
   }
