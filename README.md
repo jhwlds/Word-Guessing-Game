@@ -3,7 +3,7 @@
 ```markdown
 Word Guessing Game
 
-A simple word guessing game built with **React** that challenges players to guess a random word one letter at a time.
+A simple word guessing game built with React that challenges players to guess a random word one letter at a time.
 
 ---
 
@@ -21,10 +21,10 @@ A simple word guessing game built with **React** that challenges players to gues
 🎮 How to Play
 
 1. Select a word length from the dropdown.
-2. Click **"Get it!"** to fetch a random word.
-3. Click **"Play ▶"** to start the game.
+2. Click "Get it!" to fetch a random word.
+3. Click "Play ▶" to start the game.
 4. Type a letter and press `Enter` to guess.
-5. You have **7 chances** to guess wrong. Use them wisely!
+5. You have 7 chances to guess wrong. Use them wisely!
 6. The game ends when you:
    - Guess all the letters correctly ✅
    - Run out of attempts ❌
@@ -34,7 +34,7 @@ A simple word guessing game built with **React** that challenges players to gues
 🛠 Tech Stack
 
 - React (Vite)
-- JavaScript (ES6+)
+- JavaScript
 - HTML/CSS
 
 ---
@@ -58,16 +58,4 @@ npm install
 
 ```bash
 npm run dev
-```
-
----
-
-📁 Folder Structure
-
-```
-src/
-├── App.jsx
-├── GamePage.jsx
-├── ResultPage.jsx
-└── index.css
 ```
