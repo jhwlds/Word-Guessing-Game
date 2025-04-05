@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ResultPage from './ResultPage';
 
 function GamePage({ word }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [message, setMessage] = useState('');
-  const [remainingAttempts, setRemainingAttempts] = useState(7);
+  const [remainingAttempts, setRemainingAttempts] = useState(100);
   const [isOver, setIsOver] = useState(false);
   const [isWon, setIsWon] = useState(false);
 
@@ -12,7 +12,20 @@ function GamePage({ word }) {
     .split('')
     .map((ch) => (guessedLetters.includes(ch) ? ch : '_'))
     .join(' ');
-  
+
+    useEffect(() => {
+      if (word && !isOver) {
+        const allGuessed = word
+          .split('')
+          .every(ch => guessedLetters.includes(ch));
+
+        if (allGuessed) {
+          setIsWon(true);
+          setIsOver(true);
+        }
+      }
+    }, [guessedLetters, word, isOver]);
+
   const handleGuess = (letter) => {
     if (!letter.match(/^[a-z]$/)) {
       setMessage('Please enter an alphabet letter');
@@ -42,11 +55,10 @@ function GamePage({ word }) {
       }
     }
 
-
   }
 
   if (isOver) {
-    return <ResultPage isWon={isWon}/>;
+    return <ResultPage isWon={isWon} word={word}/>;
   }
 
   return (

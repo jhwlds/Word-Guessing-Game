@@ -1,9 +1,9 @@
-function ResultPage({ isWin, word, onRestart }) {
+function ResultPage({ isWon, word, onRestart }) {
     return (
       <div>
-        <h2>{isWin ? '🎉 You Win!' : '😢 Game Over'}</h2> 
+        <h2>{isWon ? '🎉 You Won!' : '😢 Game Over'}</h2> 
         <p>
-          {isWin
+          {isWon
             ? 'Nice!'
             : `It was "${word}". You got this next time!`}
         </p>
