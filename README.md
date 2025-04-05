@@ -1,13 +1,13 @@
-## 📄 `README.md`
+📄 `README.md`
 
 ```markdown
-# Word Guessing Game
+Word Guessing Game
 
 A simple word guessing game built with **React** that challenges players to guess a random word one letter at a time.
 
 ---
 
-## 🚀 Features
+🚀 Features
 
 - Selectable word length (3–9 letters)
 - Random word fetched from [Random Word API](https://random-word-api.vercel.app/)
@@ -18,7 +18,7 @@ A simple word guessing game built with **React** that challenges players to gues
 
 ---
 
-## 🎮 How to Play
+🎮 How to Play
 
 1. Select a word length from the dropdown.
 2. Click **"Get it!"** to fetch a random word.
@@ -31,7 +31,7 @@ A simple word guessing game built with **React** that challenges players to gues
 
 ---
 
-## 🛠 Tech Stack
+🛠 Tech Stack
 
 - React (Vite)
 - JavaScript (ES6+)
@@ -39,22 +39,22 @@ A simple word guessing game built with **React** that challenges players to gues
 
 ---
 
-## 📦 Getting Started
+📦 Getting Started
 
-### 1. Clone the repository
+1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/word-guessing-game.git
 cd word-guessing-game
 ```
 
-### 2. Install dependencies
+2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Run the development server
+3. Run the development server
 
 ```bash
 npm run dev
@@ -62,7 +62,7 @@ npm run dev
 
 ---
 
-## 📁 Folder Structure
+📁 Folder Structure
 
 ```
 src/
