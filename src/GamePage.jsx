@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ResultPage from './ResultPage';
 
 function GamePage({ word }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
@@ -17,13 +18,15 @@ function GamePage({ word }) {
       setMessage('Please enter an alphabet letter');
       return;
     }
-    const updateGuesses = [...guessedLetters, letter];
-    setGuessedLetters(updateGuesses);
+
 
     if (guessedLetters.includes(letter)) {
       setMessage('You already guessed that letter!');
       return;
     }
+
+    const updateGuesses = [...guessedLetters, letter];
+    setGuessedLetters(updateGuesses);
 
     if (word.includes(letter)) {
       setMessage('Good guess!');
@@ -32,9 +35,8 @@ function GamePage({ word }) {
       setRemainingAttempts(newAttempts);
 
       if (remainingAttempts === 1) {
-        setMessage(`Game Over! The word was "${word}"`);
-        setGuessedLetters([]);
-        setRemainingAttempts(6);
+        setIsOver(true);
+        setIsWon(false);
       } else {
         setMessage(`Wrong guess! ${newAttempts} attempts left`);
       }
@@ -43,10 +45,14 @@ function GamePage({ word }) {
 
   }
 
+  if (isOver) {
+    return <ResultPage isWon={isWon}/>;
+  }
+
   return (
     <div>
       <h2>Guess the World!</h2>
-
+      <p>Available Attempts: {remainingAttempts}</p>
       <p>{display}</p>
 
       <input 
