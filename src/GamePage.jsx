@@ -2,11 +2,15 @@ import { useState } from 'react';
 
 function GamePage({ word }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
-  
+
   const display = word
     .split('')
     .map((ch) => (guessedLetters.includes(ch) ? ch : '_'))
     .join(' ');
+  
+  const handleGuess = (letter) => {
+
+  }
 
   return (
     <div>
@@ -17,6 +21,15 @@ function GamePage({ word }) {
       <input 
         type="text"
         maxLength={1}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleGuess(e.target.value.toLowerCase());
+            e.target.value = '';
+          }
+
+          }
+        }
+
       />
 
       <p>any massage for the progress</p>
