@@ -47,7 +47,7 @@ function GamePage({ word, onRestart }) {
       const newAttempts = remainingAttempts - 1;
       setRemainingAttempts(newAttempts);
 
-      if (remainingAttempts === 1) {
+      if ( newAttempts === 0) {
         setIsOver(true);
         setIsWon(false);
       } else {
