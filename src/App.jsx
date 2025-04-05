@@ -24,6 +24,15 @@ function App() {
       <h1>Welcome to the Word Guessing Game!</h1>
 
       <label htmlFor="length">Choose the length of the word: </label>
+      <select
+        id="length"
+        value={length}
+        onChange={e => setLength(e.target.value)}
+      >
+        {[3, 4, 5, 6, 7, 8, 9].map(num => (
+          <option key={num} value={num}>{num} letters</option>
+        ))}
+      </select>
 
       <button onClick={fetchWord}>Get it!</button>
 
@@ -32,9 +41,8 @@ function App() {
           <p>Loading...</p>
         ) : word ? (
           <p>Word: <strong>{word}</strong></p>
-        )
-        : (
-          <p>No word fetched yet.</p>
+        ) : (
+          <p>choose length first</p>
         )}
       </div>
     </div>
