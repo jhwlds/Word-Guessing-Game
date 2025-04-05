@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 function GamePage({ word }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
+  const [message, setMassage] = useState('');
 
   const display = word
     .split('')
@@ -9,7 +10,11 @@ function GamePage({ word }) {
     .join(' ');
   
   const handleGuess = (letter) => {
-
+    if (!letter.match(/^[a-z]$/)) {
+      setMassage('Please enter an alphabet letter');
+      return;
+    }
+      
   }
 
   return (
@@ -27,12 +32,11 @@ function GamePage({ word }) {
             e.target.value = '';
           }
 
-          }
-        }
+        }}
 
       />
 
-      <p>any massage for the progress</p>
+      <p>{message}</p>
 
     </div>
   );
