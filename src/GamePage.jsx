@@ -4,6 +4,8 @@ function GamePage({ word }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [message, setMessage] = useState('');
   const [remainingAttempts, setRemainingAttempts] = useState(7);
+  const [isOver, setIsOver] = useState(false);
+  const [isWon, setIsWon] = useState(false);
 
   const display = word
     .split('')
@@ -40,8 +42,6 @@ function GamePage({ word }) {
 
 
   }
-
-
 
   return (
     <div>
