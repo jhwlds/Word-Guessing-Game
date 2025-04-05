@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import ResultPage from './ResultPage';
 
-function GamePage({ word }) {
+function GamePage({ word, onRestart }) {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [message, setMessage] = useState('');
-  const [remainingAttempts, setRemainingAttempts] = useState(100);
+  const [remainingAttempts, setRemainingAttempts] = useState(7);
   const [isOver, setIsOver] = useState(false);
   const [isWon, setIsWon] = useState(false);
 
@@ -58,7 +58,7 @@ function GamePage({ word }) {
   }
 
   if (isOver) {
-    return <ResultPage isWon={isWon} word={word}/>;
+    return <ResultPage isWon={isWon} word={word} onRestart={onRestart}/>;
   }
 
   return (

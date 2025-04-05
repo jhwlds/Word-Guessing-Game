@@ -21,13 +21,18 @@ function App() {
       });
   };
 
+  const handleRestart = () => {
+    setWord('');
+    setIsGameStarted(false);
+  };
+
   if (isGameStarted) {
-    return <GamePage word={word} />;
+    return <GamePage word={word} onRestart={handleRestart}/>;
   }
 
   return (
     <div>
-      <h1>Word Guessing Game</h1>
+      <h1>Welcome to the Word Guessing Game</h1>
 
       <label htmlFor="length">Choose word length: </label>
       <select
